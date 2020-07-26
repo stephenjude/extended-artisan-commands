@@ -3,7 +3,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/stephenjude/extended-artisan-commands.svg?style=flat-square)](https://packagist.org/packages/stephenjude/extended-artisan-commands)
 [![Build Status](https://img.shields.io/travis/stephenjude/extended-artisan-commands/master.svg?style=flat-square)](https://travis-ci.org/stephenjude/extended-artisan-commands)
 
-Have you ever enjoyed the assistance of artisan commands? This packages brings more of it.
+Have you ever enjoyed the assistance of artisan commands? This package brings more of it :)
 
 You can now generate PHP classes and traits using artisan `make:class` or `make:trait` console commands.
 
@@ -15,26 +15,34 @@ composer require stephenjude/extended-artisan-commands --dev
 ```
 ### Step 2: Run Artisan!
 You're all set. Run php artisan from the console, and you'll see the new commands in the make:* namespace section.
+- make:class
+- make:trait
 
 ## Usage
 ### Creating A PHP Class
 You can generate a class by calling the artisan `make:class` command followed by the name of the class. 
 ``` bash
-php artisan make:class Services/EmailService
+php artisan make:class Helper
 ```
-This `EmailService` class will be saved inside the `app/Services` directory and if the directory does not exist it will be created for you.
+This `Helper` class will be generated under the `App` namespace.
+
+### Creating A PHP Class With Namespace
+``` bash
+php artisan make:class Services/EmailForwarderService
+```
+This `EmailForwarderService` class will be generated under the `App/Services` namespace and the directory will be automatically created if it does not exist.
 
 ### Creating A PHP Trait
 You can generate a trait by calling the artisan `make:trait` command followed by the name of the trait. 
 ``` bash
 php artisan make:trait FileUpload
 ```
-All traits will be saved inside the app/Traits directory unless you spacify another namespace.
+By default, all traits are generated under the `App/Traits` namespace and the directory will be automatically created if it does not exist.
 
-### Overridng Existing Class or Trait
-To override an existing class or trait you have to pass the `--force` option to your command.
+### Overriding Existing Class or Trait
+To override an existing class or trait, you have to pass the `--force` option to your console command.
 ``` bash
-php artisan make:class Services/EmailService --force
+php artisan make:class Services/EmailForwarderService --force
 
 php artisan make:trait FileUpload --force
 ```
