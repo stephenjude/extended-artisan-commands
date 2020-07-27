@@ -86,7 +86,7 @@ class TraitMakeCommand extends GeneratorCommand
     protected function getOptions()
     {
         return [
-            ['force', null, InputOption::VALUE_NONE, 'Create the class even if the model already exists'],
+            ['force', null, InputOption::VALUE_NONE, 'Create the trait even if the trait already exists'],
         ];
     }
 }
