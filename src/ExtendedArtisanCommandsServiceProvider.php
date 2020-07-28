@@ -20,10 +20,13 @@ class ExtendedArtisanCommandsServiceProvider extends ServiceProvider
                 __DIR__.'/../config/config.php' => config_path('extended-artisan-commands.php'),
             ], 'config');
 
-
             // Registering package commands.
-            $this->commands(['Stephenjude\ExtendedArtisanCommands\Commands\ClassMakeCommand']);
-            $this->commands(['Stephenjude\ExtendedArtisanCommands\Commands\TraitMakeCommand']);
+            $this->commands([
+                'Stephenjude\ExtendedArtisanCommands\Commands\ClassMakeCommand',
+                'Stephenjude\ExtendedArtisanCommands\Commands\AbstractClassMakeCommand',
+                'Stephenjude\ExtendedArtisanCommands\Commands\InterfaceMakeCommand',
+                'Stephenjude\ExtendedArtisanCommands\Commands\TraitMakeCommand'
+            ]);
         }
     }
 
