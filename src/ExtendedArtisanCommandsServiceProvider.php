@@ -37,10 +37,5 @@ class ExtendedArtisanCommandsServiceProvider extends ServiceProvider
     {
         // Automatically apply the package configuration
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'extended-artisan-commands');
-
-        // Register the main class to use with the facade
-        $this->app->singleton('extended-artisan-commands', function () {
-            return new ExtendedArtisanCommands;
-        });
     }
 }
