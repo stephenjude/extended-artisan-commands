@@ -63,7 +63,7 @@ class InterfaceMakeCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace.config('extended-artisan-commands.interface_namespace');;
+        return $rootNamespace.config('extended-artisan-commands.interface_namespace');
     }
 
     /**

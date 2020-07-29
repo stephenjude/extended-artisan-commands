@@ -63,7 +63,7 @@ class AbstractClassMakeCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace.config('extended-artisan-commands.abstract_class_namespace');;
+        return $rootNamespace.config('extended-artisan-commands.abstract_class_namespace');
     }
 
     /**

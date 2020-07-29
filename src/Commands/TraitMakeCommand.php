@@ -63,7 +63,7 @@ class TraitMakeCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace.'\Traits';
+        return $rootNamespace.config('extended-artisan-commands.trait_namespace');
     }
 
     /**
