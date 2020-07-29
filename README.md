@@ -20,36 +20,29 @@ You're all set. Run php artisan from the console, and you'll see the new command
 - make:trait
 
 ## Usage
-### Creating A PHP Class
+Here's a few other examples of commands that you might write:
+
 ``` bash
 php artisan make:class Services/EmailForwarderService
 ```
-This `EmailForwarderService` class will be generated under the `App/Services` namespace and the directory will be automatically created if it does not exist.
-
-
-### Creating An Abstract Class
-You can generate an abstract class by calling the artisan `make:abstract-class` command followed by the name of the class. 
 ``` bash
 php artisan make:abstract-class Services/AbstractEmailForwarder
 ```
-By default, all traits are generated under the `App/Services` namespace.
-
-### Creating An Interface
-You can generate an interface by calling the artisan `make:interface` command followed by the name of the class. 
 ``` bash
-php artisan make:abstract-class Services/AbstractEmailForwarder
+php artisan make:interface EmailForwarderContract
 ```
-By default, all interfaces are generated under the `App/Contracts` namespace.
-
-### Creating A Trait
-You can generate a trait by calling the artisan `make:trait` command followed by the name of the trait. 
 ``` bash
 php artisan make:trait FileUpload
 ```
-By default, all traits are generated under the `App/Traits` namespace and the directory will be automatically created if it does not exist.
-
 ### Option for all the commands
 --force This will overide the existing file, if it exist
+
+### Default Namespaces
+ - All interfaces are generated under the `App/Contracts` namespace.
+ - All traits are generated under the `App/Traits` namespace.
+ - Classes and abstract classes are generated under the `App` namespace.
+
+Default namespaces can be configured inside the package config file. 
 
 ## Configurations
 You can configure default namespace by publishing the package config file:
