@@ -5,10 +5,9 @@
 
 Have you ever enjoyed the assistance of artisan commands? This package brings more of it :)
 
-You can now generate PHP classes and traits using artisan `make:class` or `make:trait` console commands.
+You can now generate PHP classes and traits using artisan `make:class`, `make:abstract-class`, `make:interface` or `make:trait` console commands.
 
 ## Installation
-
 ### Step 1: Install Through Composer
 ```bash
 composer require stephenjude/extended-artisan-commands --dev
@@ -16,35 +15,101 @@ composer require stephenjude/extended-artisan-commands --dev
 ### Step 2: Run Artisan!
 You're all set. Run php artisan from the console, and you'll see the new commands in the make:* namespace section.
 - make:class
+- make:abstract-class
+- make:interface
 - make:trait
 
 ## Usage
 ### Creating A PHP Class
-You can generate a class by calling the artisan `make:class` command followed by the name of the class. 
-``` bash
-php artisan make:class Helper
-```
-This `Helper` class will be generated under the `App` namespace.
-
-### Creating A PHP Class With Namespace
 ``` bash
 php artisan make:class Services/EmailForwarderService
 ```
 This `EmailForwarderService` class will be generated under the `App/Services` namespace and the directory will be automatically created if it does not exist.
 
-### Creating A PHP Trait
+
+### Creating An Abstract Class
+You can generate an abstract class by calling the artisan `make:abstract-class` command followed by the name of the class. 
+``` bash
+php artisan make:abstract-class Services/AbstractEmailForwarder
+```
+By default, all traits are generated under the `App/Services` namespace.
+
+### Creating An Interface
+You can generate an interface by calling the artisan `make:interface` command followed by the name of the class. 
+``` bash
+php artisan make:abstract-class Services/AbstractEmailForwarder
+```
+By default, all interfaces are generated under the `App/Contracts` namespace.
+
+### Creating A Trait
 You can generate a trait by calling the artisan `make:trait` command followed by the name of the trait. 
 ``` bash
 php artisan make:trait FileUpload
 ```
 By default, all traits are generated under the `App/Traits` namespace and the directory will be automatically created if it does not exist.
 
-### Overriding Existing Class or Trait
-To override an existing class or trait, you have to pass the `--force` option to your console command.
-``` bash
-php artisan make:class Services/EmailForwarderService --force
+### Option for all the commands
+--force This will overide the existing file, if it exist
 
-php artisan make:trait FileUpload --force
+## Configurations
+You can configure default namespace by publishing the package config file:
+```bash 
+php artisan vendor:publish --provider="Stephenjude\ExtendedArtisanCommands\ExtendedArtisanCommandsServiceProvider" --tag="config"
+```
+### Configuring Default Namespace
+```php
+return [
+    /*
+    |--------------------------------------------------------------------------
+    | Default Class Namespace
+    |--------------------------------------------------------------------------
+    |
+    | Here you can configure the default namespace for
+    | the make:class command.
+    |
+    */
+
+    'class_namespace' => env('CLASS_NAMESPACE', ''),
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Abstract Class Namespace
+    |--------------------------------------------------------------------------
+    |
+    | Here you can configure the default namespace for
+    | the make:abstract-class command.
+    |
+    */
+
+    'abstract_class_namespace' => env('ABSTRACT_CLASS_NAMESPACE', ''),
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Interface Namespace
+    |--------------------------------------------------------------------------
+    |
+    | Here you can configure the default namespace for
+    | the make:interface command.
+    |
+    */
+
+    'interface_namespace' => env('INTERFACE_NAMESPACE', '\Contracts'),
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Trait Namespace
+    |--------------------------------------------------------------------------
+    |
+    | Here you can configure the default namespace for
+    | the make:trait command.
+    |
+    */
+
+    'trait_namespace' => env('TRAIT_NAMESPACE', '\Traits'),
+];
 ```
 
 ### Testing
