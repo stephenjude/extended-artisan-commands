@@ -20,7 +20,7 @@ class ClassMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = 'Create a new Class';
+    protected $description = 'Create a new class';
 
     /**
      * The type of class being generated.
@@ -63,7 +63,7 @@ class ClassMakeCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace;
+        return $rootNamespace.config('extended-artisan-commands.class_namespace');
     }
 
     /**
@@ -86,7 +86,7 @@ class ClassMakeCommand extends GeneratorCommand
     protected function getOptions()
     {
         return [
-            ['force', null, InputOption::VALUE_NONE, 'Create the class even if the model already exists'],
+            ['force', null, InputOption::VALUE_NONE, 'Create the class even if the class already exists'],
         ];
     }
 }

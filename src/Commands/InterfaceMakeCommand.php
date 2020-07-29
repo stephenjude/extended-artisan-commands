@@ -6,28 +6,28 @@ use Illuminate\Console\GeneratorCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
-class TraitMakeCommand extends GeneratorCommand
+class InterfaceMakeCommand extends GeneratorCommand
 {
     /**
      * The console command name.
      *
      * @var string
      */
-    protected $name = 'make:trait';
+    protected $name = 'make:interface';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new Trait';
+    protected $description = 'Create a new interface class';
 
     /**
      * The type of class being generated.
      *
      * @var string
      */
-    protected $type = 'Trait';
+    protected $type = 'Interface';
 
     /**
      * Replace the class name for the given stub.
@@ -40,9 +40,9 @@ class TraitMakeCommand extends GeneratorCommand
     {
         $stub = parent::replaceClass($stub, $name);
 
-        $traitName = class_basename($this->argument('name'));
+        $className = class_basename($this->argument('name'));
 
-        return str_replace('DummyTrait', $traitName, $stub);
+        return str_replace('DummyInterface', $className, $stub);
     }
 
     /**
@@ -52,7 +52,7 @@ class TraitMakeCommand extends GeneratorCommand
      */
     protected function getStub()
     {
-        return __DIR__.'/../stubs/trait.stub';
+        return __DIR__.'/../stubs/interface.stub';
     }
 
     /**
@@ -63,7 +63,7 @@ class TraitMakeCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace.config('extended-artisan-commands.trait_namespace');
+        return $rootNamespace.config('extended-artisan-commands.interface_namespace');
     }
 
     /**
@@ -74,7 +74,7 @@ class TraitMakeCommand extends GeneratorCommand
     protected function getArguments()
     {
         return [
-            ['name', InputArgument::REQUIRED, 'The name of the trait.'],
+            ['name', InputArgument::REQUIRED, 'The name of the interface.'],
         ];
     }
 
@@ -86,7 +86,7 @@ class TraitMakeCommand extends GeneratorCommand
     protected function getOptions()
     {
         return [
-            ['force', null, InputOption::VALUE_NONE, 'Create the trait even if the trait already exists'],
+            ['force', null, InputOption::VALUE_NONE, 'Create the interface even if it already exists'],
         ];
     }
 }
