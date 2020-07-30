@@ -43,6 +43,17 @@ php artisan make:trait FileUpload
 - `--abstract` OR `-c` This will generate an abstract class for the generated class. 
 - `--all` OR `-a` This will generate an interface, a trait and an abstract class for the generated class. 
 
+#### Example:
+This will generate an interface for this class.
+```bash
+php artisan make:class Services/EmailForwarderService --interface
+```
+
+This will generate a trait for this class.
+```bash
+php artisan make:class Services/EmailForwarderService --trait
+```
+
 ### Default Namespaces
  - All interfaces are generated under the `App/Contracts` namespace.
  - All traits are generated under the `App/Traits` namespace.
