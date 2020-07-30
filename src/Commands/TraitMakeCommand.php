@@ -20,7 +20,7 @@ class TraitMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = 'Create a new Trait';
+    protected $description = 'Create a new trait';
 
     /**
      * The type of class being generated.

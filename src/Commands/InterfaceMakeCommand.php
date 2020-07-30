@@ -20,7 +20,7 @@ class InterfaceMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = 'Create a new interface class';
+    protected $description = 'Create a new interface';
 
     /**
      * The type of class being generated.
