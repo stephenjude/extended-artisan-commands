@@ -10,7 +10,7 @@ class MakeInterfaceTest extends TestCase
     public function test_make_interface()
     {
         $this->artisan('make:interface EmailContract')
-            ->expectsOutput('Interface created successfully.')
+            ->expectsOutput($this->interfaceConsoleOutput)
             ->assertExitCode(0);
     }
 }

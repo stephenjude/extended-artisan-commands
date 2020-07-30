@@ -5,7 +5,7 @@
 
 Have you ever enjoyed the assistance of artisan commands? This package brings more of it :)
 
-You can now generate PHP classes and traits using artisan `make:class`, `make:abstract-class`, `make:interface` or `make:trait` console commands.
+You can now generate PHP classes and traits using artisan `make:class`,  `make:interface`, `make:trait` or `make:abstract-class` console commands.
 
 ## Installation
 ### Step 1: Install Through Composer
@@ -15,41 +15,51 @@ composer require stephenjude/extended-artisan-commands --dev
 ### Step 2: Run Artisan!
 You're all set. Run php artisan from the console, and you'll see the new commands in the make:* namespace section.
 - make:class
-- make:abstract-class
 - make:interface
 - make:trait
+- make:abstract-class
 
 ## Usage
-### Creating A PHP Class
+Here's a few other examples of commands that you might write:
+
 ``` bash
 php artisan make:class Services/EmailForwarderService
 ```
-This `EmailForwarderService` class will be generated under the `App/Services` namespace and the directory will be automatically created if it does not exist.
-
-
-### Creating An Abstract Class
-You can generate an abstract class by calling the artisan `make:abstract-class` command followed by the name of the class. 
 ``` bash
 php artisan make:abstract-class Services/AbstractEmailForwarder
 ```
-By default, all traits are generated under the `App/Services` namespace.
-
-### Creating An Interface
-You can generate an interface by calling the artisan `make:interface` command followed by the name of the class. 
 ``` bash
-php artisan make:abstract-class Services/AbstractEmailForwarder
+php artisan make:interface EmailForwarderContract
 ```
-By default, all interfaces are generated under the `App/Contracts` namespace.
-
-### Creating A Trait
-You can generate a trait by calling the artisan `make:trait` command followed by the name of the trait. 
 ``` bash
 php artisan make:trait FileUpload
 ```
-By default, all traits are generated under the `App/Traits` namespace and the directory will be automatically created if it does not exist.
-
 ### Option for all the commands
 --force This will overide the existing file, if it exist
+
+### Options for the `make:class` command
+- `--interface` OR `-i` This will generate an interface for the generated class. 
+- `--trait` OR `-t` This will generate a trait for the generated class. 
+- `--abstract` OR `-c` This will generate an abstract class for the generated class. 
+- `--all` OR `-a` This will generate an interface, a trait and an abstract class for the generated class. 
+
+#### Example:
+This will generate an interface for this class.
+```bash
+php artisan make:class Services/EmailForwarderService --interface
+```
+
+This will generate a trait for this class.
+```bash
+php artisan make:class Services/EmailForwarderService --trait
+```
+
+### Default Namespaces
+ - All interfaces are generated under the `App/Contracts` namespace.
+ - All traits are generated under the `App/Traits` namespace.
+ - Classes and abstract classes are generated under the `App` namespace.
+
+Default namespaces can be configured inside the package config file. 
 
 ## Configurations
 You can configure default namespace by publishing the package config file:

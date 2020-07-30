@@ -2,12 +2,13 @@
 
 namespace DummyNamespace;
 
-class DummyClass
-{
-    public function __construct()
-    {
+use DummyTraitNamespace;
+use DummyInterfaceNamespace;
+use DummyAbstractClassNamespace;
 
-    }
+class DummyClass extends DummyAbstractClass implements DummyInterface
+{
+    use DummyTrait;
 }
 
 

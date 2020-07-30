@@ -8,7 +8,7 @@ class MakeTraitTest extends TestCase
     public function test_make_trait()
     {
         $this->artisan('make:trait FileUpload')
-            ->expectsOutput('Trait created successfully.')
+            ->expectsOutput($this->traitConsoleOutput)
             ->assertExitCode(0);
     }
 

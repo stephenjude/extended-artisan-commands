@@ -8,6 +8,35 @@ use Stephenjude\ExtendedArtisanCommands\ExtendedArtisanCommandsServiceProvider;
 
 class TestCase extends Orchestra
 {
+    /**
+     * Console output for make:interface command
+     *
+     * @var string
+     */
+    protected $interfaceConsoleOutput = "Interface created successfully.";
+
+    /**
+     * Console output for make:trait command
+     *
+     * @var string
+     */
+    protected $traitConsoleOutput = "Trait created successfully.";
+
+    /**
+     * Console output for make:class command
+     *
+     * @var string
+     */
+    protected $classConsoleOutput = "Class created successfully.";
+
+
+    /**
+     * Console output for make:abstract-class command
+     *
+     * @var string
+     */
+    protected $abstractClassConsoleOutput = "Abstract Class created successfully.";
+
     public function setUp() : void
     {
         parent::setUp();
@@ -18,17 +47,6 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [ExtendedArtisanCommandsServiceProvider::class];
-    }
-
-    private function cleanOutputDirectory() : void
-    {
-        /**
-         *  Remove known files while suppressing errors
-         */
-        @unlink(app_path('Contracts/EmailContract.php'));
-        @unlink(app_path('Traits/FileUpload.php'));
-        @unlink(app_path('Services/CommandGenerator.php'));
-        @unlink(app_path('Services/EmailService.php'));
     }
 
     /**
@@ -43,5 +61,10 @@ class TestCase extends Orchestra
         $app['config']->set('extended-artisan-commands.abstract_class_namespace', '');
         $app['config']->set('extended-artisan-commands.interface_namespace', '\Contracts');
         $app['config']->set('extended-artisan-commands.trait_namespace', '\Traits');
+    }
+
+    private function cleanOutputDirectory() : void
+    {
+         File::deleteDirectory(base_path('app'));
     }
 }
