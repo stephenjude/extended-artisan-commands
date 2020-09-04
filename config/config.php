@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'class_namespace' => env('CLASS_NAMESPACE', ''),
+    'class_namespace' => '',
 
 
     /*
@@ -24,7 +24,7 @@ return [
     |
     */
 
-    'abstract_class_namespace' => env('ABSTRACT_CLASS_NAMESPACE', ''),
+    'abstract_class_namespace' => '',
 
 
     /*
@@ -37,7 +37,7 @@ return [
     |
     */
 
-    'interface_namespace' => env('INTERFACE_NAMESPACE', '\Contracts'),
+    'interface_namespace' => '\Contracts',
 
 
     /*
@@ -50,5 +50,5 @@ return [
     |
     */
 
-    'trait_namespace' => env('TRAIT_NAMESPACE', '\Traits'),
+    'trait_namespace' => '\Traits',
 ];
