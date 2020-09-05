@@ -2,6 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/stephenjude/extended-artisan-commands.svg?style=flat-square)](https://packagist.org/packages/stephenjude/extended-artisan-commands)
 [![Build Status](https://img.shields.io/travis/stephenjude/extended-artisan-commands/master.svg?style=flat-square)](https://travis-ci.org/stephenjude/extended-artisan-commands)
+[![Total Downloads](https://img.shields.io/packagist/dt/stephenjude/extended-artisan-commands.svg?style=flat-square)](https://packagist.org/packages/stephenjude/extended-artisan-commands)
 
 Have you ever enjoyed the assistance of artisan commands? This package brings more of it :)
 
