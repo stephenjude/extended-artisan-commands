@@ -35,9 +35,9 @@ trait WithInterface
      */
     protected function replaceInterfaceStubs($stub) : string
     {
-        $namespace = $this->getInterfaceNamespace($this->className);
+        $namespace = $this->getInterfaceNamespace($this->enumName);
 
-        $alias = $this->className.$this->suffix;
+        $alias = $this->enumName.$this->suffix;
 
         $stub = str_replace('DummyInterfaceNamespace', "$namespace as $alias", $stub);
 

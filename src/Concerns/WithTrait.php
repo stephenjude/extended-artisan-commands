@@ -28,9 +28,9 @@ trait WithTrait
      */
     protected function replaceTraitStubs($stub) : string
     {
-        $namespace = $this->getTraitNamespace($this->className);
+        $namespace = $this->getTraitNamespace($this->enumName);
 
-        $alias = $this->className.'Trait';
+        $alias = $this->enumName.'Trait';
 
         $useTrait = "$namespace as $alias";
 

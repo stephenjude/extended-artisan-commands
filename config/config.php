@@ -51,4 +51,16 @@ return [
     */
 
     'trait_namespace' => '\Traits',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Enum Namespace
+    |--------------------------------------------------------------------------
+    |
+    | Here you can configure the default namespace for
+    | the make:enum command.
+    |
+    */
+
+    'enum_namespace' => '\Enums',
 ];

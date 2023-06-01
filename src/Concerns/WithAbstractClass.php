@@ -29,7 +29,7 @@ trait WithAbstractClass
 
         $alias = $this->classPrefix.$baseName;
 
-        $abstractClass = Str::studly(str_replace($baseName, $alias,  $name));
+        $abstractClass = Str::studly(str_replace($baseName, $alias,  (string) $name));
 
         $this->call('make:abstract-class', [
             'name' => "{$abstractClass}",
@@ -44,7 +44,7 @@ trait WithAbstractClass
      */
     protected function replaceAbstractClassStubs($stub) : string
     {
-        $alias = $this->classPrefix.$this->className;
+        $alias = $this->classPrefix.$this->enumName;
 
         $namespace = $this->getAbstractClassNamespace($alias);
 

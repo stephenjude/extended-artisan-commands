@@ -22,10 +22,10 @@ class ExtendedArtisanCommandsServiceProvider extends ServiceProvider
 
             // Registering package commands.
             $this->commands([
-                'Stephenjude\ExtendedArtisanCommands\Commands\ClassMakeCommand',
-                'Stephenjude\ExtendedArtisanCommands\Commands\AbstractClassMakeCommand',
-                'Stephenjude\ExtendedArtisanCommands\Commands\InterfaceMakeCommand',
-                'Stephenjude\ExtendedArtisanCommands\Commands\TraitMakeCommand'
+                \Stephenjude\ExtendedArtisanCommands\Commands\ClassMakeCommand::class,
+                \Stephenjude\ExtendedArtisanCommands\Commands\AbstractClassMakeCommand::class,
+                \Stephenjude\ExtendedArtisanCommands\Commands\InterfaceMakeCommand::class,
+                \Stephenjude\ExtendedArtisanCommands\Commands\TraitMakeCommand::class
             ]);
         }
     }

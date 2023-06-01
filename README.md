@@ -35,6 +35,9 @@ php artisan make:interface EmailForwarderContract
 ``` bash
 php artisan make:trait FileUpload
 ```
+``` bash
+php artisan make:enum Permission
+```
 ### Option for all the commands
 --force This will overide the existing file, if it exist
 
@@ -58,6 +61,7 @@ php artisan make:class Services/EmailForwarderService --trait
 ### Default Namespaces
  - All interfaces are generated under the `App/Contracts` namespace.
  - All traits are generated under the `App/Traits` namespace.
+ - All enums are generated under the `App/Enums` namespace.
  - Classes and abstract classes are generated under the `App` namespace.
 
 Default namespaces can be configured inside the package config file. 
@@ -120,6 +124,18 @@ return [
     */
 
     'trait_namespace' => '\Traits',
+    
+        /*
+    |--------------------------------------------------------------------------
+    | Default Enum Namespace
+    |--------------------------------------------------------------------------
+    |
+    | Here you can configure the default namespace for
+    | the make:enum command.
+    |
+    */
+
+    'enum_namespace' => '\Enums',
 ];
 ```
 
