@@ -2,7 +2,7 @@
 
 namespace DummyNamespace;
 
-trait DummyEnum
+enum DummyEnum
 {
 
 }
