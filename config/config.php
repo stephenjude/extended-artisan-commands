@@ -13,7 +13,6 @@ return [
 
     'class_namespace' => '',
 
-
     /*
     |--------------------------------------------------------------------------
     | Default Abstract Class Namespace
@@ -26,7 +25,6 @@ return [
 
     'abstract_class_namespace' => '',
 
-
     /*
     |--------------------------------------------------------------------------
     | Default Interface Namespace
@@ -38,7 +36,6 @@ return [
     */
 
     'interface_namespace' => '\Contracts',
-
 
     /*
     |--------------------------------------------------------------------------

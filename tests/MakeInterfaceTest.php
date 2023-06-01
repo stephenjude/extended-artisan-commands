@@ -2,8 +2,6 @@
 
 namespace Stephenjude\ExtendedArtisanCommands\Tests;
 
-use Illuminate\Support\Facades\File;
-
 class MakeInterfaceTest extends TestCase
 {
     /** @test */

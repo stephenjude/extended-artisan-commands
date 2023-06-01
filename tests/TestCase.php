@@ -13,38 +13,37 @@ class TestCase extends Orchestra
      *
      * @var string
      */
-    protected $interfaceConsoleOutput = "Interface created successfully.";
+    protected $interfaceConsoleOutput = 'Interface created successfully.';
 
     /**
      * Console output for make:trait command
      *
      * @var string
      */
-    protected $traitConsoleOutput = "Trait created successfully.";
+    protected $traitConsoleOutput = 'Trait created successfully.';
 
     /**
      * Console output for make:trait command
      *
      * @var string
      */
-    protected $enumConsoleOutput = "Enum created successfully.";
+    protected $enumConsoleOutput = 'Enum created successfully.';
 
     /**
      * Console output for make:class command
      *
      * @var string
      */
-    protected $classConsoleOutput = "Class created successfully.";
-
+    protected $classConsoleOutput = 'Class created successfully.';
 
     /**
      * Console output for make:abstract-class command
      *
      * @var string
      */
-    protected $abstractClassConsoleOutput = "Abstract Class created successfully.";
+    protected $abstractClassConsoleOutput = 'Abstract Class created successfully.';
 
-    public function setUp() : void
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -60,9 +59,8 @@ class TestCase extends Orchestra
      * Define environment setup.
      *
      * @param  \Illuminate\Foundation\Application  $app
-     * @return void
      */
-    protected function getEnvironmentSetUp($app) : void
+    protected function getEnvironmentSetUp($app): void
     {
         $app['config']->set('extended-artisan-commands.class_namespace', '');
         $app['config']->set('extended-artisan-commands.abstract_class_namespace', '');
@@ -70,8 +68,8 @@ class TestCase extends Orchestra
         $app['config']->set('extended-artisan-commands.trait_namespace', '\Traits');
     }
 
-    private function cleanOutputDirectory() : void
+    private function cleanOutputDirectory(): void
     {
-         File::deleteDirectory(base_path('app'));
+        File::deleteDirectory(base_path('app'));
     }
 }

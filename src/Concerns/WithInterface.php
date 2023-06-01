@@ -31,9 +31,8 @@ trait WithInterface
      * Replace the interface name for the given stub.
      *
      * @param  string  $stub
-     * @return string
      */
-    protected function replaceInterfaceStubs($stub) : string
+    protected function replaceInterfaceStubs($stub): string
     {
         $namespace = $this->getInterfaceNamespace($this->enumName);
 
@@ -50,7 +49,6 @@ trait WithInterface
      * Parse the interface name and format according to interface root namespace.
      *
      * @param  string  $name
-     * @return string
      */
     protected function getInterfaceNamespace($name): string
     {

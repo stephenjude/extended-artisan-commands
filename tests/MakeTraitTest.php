@@ -11,6 +11,4 @@ class MakeTraitTest extends TestCase
             ->expectsOutput($this->traitConsoleOutput)
             ->assertExitCode(0);
     }
-
-
 }

@@ -25,7 +25,8 @@ class ExtendedArtisanCommandsServiceProvider extends ServiceProvider
                 \Stephenjude\ExtendedArtisanCommands\Commands\ClassMakeCommand::class,
                 \Stephenjude\ExtendedArtisanCommands\Commands\AbstractClassMakeCommand::class,
                 \Stephenjude\ExtendedArtisanCommands\Commands\InterfaceMakeCommand::class,
-                \Stephenjude\ExtendedArtisanCommands\Commands\TraitMakeCommand::class
+                \Stephenjude\ExtendedArtisanCommands\Commands\TraitMakeCommand::class,
+                \Stephenjude\ExtendedArtisanCommands\Commands\EnumMakeCommand::class,
             ]);
         }
     }

@@ -3,7 +3,6 @@
 namespace Stephenjude\ExtendedArtisanCommands\Commands;
 
 use Illuminate\Console\GeneratorCommand;
-use Illuminate\Support\Str;
 use Stephenjude\ExtendedArtisanCommands\Concerns\WithAbstractClass;
 use Stephenjude\ExtendedArtisanCommands\Concerns\WithInterface;
 use Stephenjude\ExtendedArtisanCommands\Concerns\WithStubCleaner;
@@ -14,6 +13,7 @@ use Symfony\Component\Console\Input\InputOption;
 class ClassMakeCommand extends GeneratorCommand
 {
     use WithInterface, WithAbstractClass, WithTrait, WithStubCleaner;
+
     /**
      * The console command name.
      *
@@ -68,7 +68,7 @@ class ClassMakeCommand extends GeneratorCommand
         }
     }
 
-    public function setUp() : void
+    public function setUp(): void
     {
         $this->className = class_basename($this->argument('name'));
 
@@ -141,7 +141,6 @@ class ClassMakeCommand extends GeneratorCommand
             ['name', InputArgument::REQUIRED, 'The name of the class.'],
         ];
     }
-
 
     /**
      * Get the console command options.

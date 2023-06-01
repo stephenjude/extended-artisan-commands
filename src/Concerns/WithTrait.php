@@ -24,9 +24,8 @@ trait WithTrait
      * Replace the trait name for the given stub.
      *
      * @param  string  $stub
-     * @return string
      */
-    protected function replaceTraitStubs($stub) : string
+    protected function replaceTraitStubs($stub): string
     {
         $namespace = $this->getTraitNamespace($this->enumName);
 
@@ -45,7 +44,6 @@ trait WithTrait
      * Parse the trait name and format according to trait root namespace.
      *
      * @param  string  $name
-     * @return string
      */
     protected function getTraitNamespace($name): string
     {
