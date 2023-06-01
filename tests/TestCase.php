@@ -23,6 +23,13 @@ class TestCase extends Orchestra
     protected $traitConsoleOutput = "Trait created successfully.";
 
     /**
+     * Console output for make:trait command
+     *
+     * @var string
+     */
+    protected $enumConsoleOutput = "Enum created successfully.";
+
+    /**
      * Console output for make:class command
      *
      * @var string
