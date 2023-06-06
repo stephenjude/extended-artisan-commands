@@ -15,10 +15,11 @@ composer require stephenjude/extended-artisan-commands --dev
 ```
 ### Step 2: Run Artisan!
 You're all set. Run php artisan from the console, and you'll see the new commands in the make:* namespace section.
-- make:class
 - make:interface
-- make:trait
+- make:class
 - make:abstract-class
+- make:trait
+- make:enum
 
 ## Usage
 Here's a few other examples of commands that you might write:
